@@ -1,0 +1,47 @@
+URxvt.scrollBar: false
+Rxvt.perl-ext-common: default,matcher,resize-font
+URxvt.internalBorder:  16
+URxvt*depth: 32
+URxvt.url-launcher: firefox
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+URxvt*borderless: false
+URxvt.font: xft:SpaceMono Nerd Font Mono:size=13
+URxvt.letterSpace: -1
+URxvt.underlineURLs: true
+URxvt.saveLines: 2000
+
+*background:  #282F37
+*foreground:  #F1FCF9
+*cursorColor: #F1FCF9
+*color0:      #20262C
+*color1:      #DB86BA
+*color2:      #74DD91
+*color3:      #E49186
+*color4:      #75DBE1
+*color5:      #B4A1DB
+*color6:      #9EE9EA
+*color7:      #F1FCF9
+*color8:      #465463
+*color9:      #D04E9D
+*color10:     #4BC66D
+*color11:     #DB695B
+*color12:     #3DBAC2
+*color13:     #825ECE
+*color14:     #62CDCD
+*color15:     #E0E5E5
+
+! Rofi
+
+rofi.show-icons: true
+rofi.modi: drun,run,window,ssh
+rofi.lines: 5
+rofi.line-padding: 7
+rofi.matching: fuzzy
+rofi.bw: 0
+rofi.padding: 0
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.line-margin: 0
+rofi.font: Hack 14
+rofi.theme: ~/.config/rofi/config.rasi
