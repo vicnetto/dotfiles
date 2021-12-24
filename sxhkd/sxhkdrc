@@ -4,11 +4,11 @@
 
 # terminal emulator 
 super + Return 
-	urxvt
+	alacritty
 
 # program launcher
 super + @space
-	rofi -show
+	dmenu_run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -49,6 +49,10 @@ super + {t,shift + t,s,f}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
+
+# rotate on partent
+super + ctrl + r
+	bspc node @parent -R 90
 
 #
 # focus/swap
@@ -132,7 +136,7 @@ super + F6
 
 # changing output to TV
 super + F8
-	pacmd set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo
+	pacmd set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
 
 # muting output
 super + F9
@@ -146,9 +150,21 @@ super + F10
 super + F11
 	amixer set Master 5%+
 
-# screenshot
-super + F12
-	shot
+#
+# wacom change displays
+#
+
+# set to left monitor
+alt + w + 1
+	./personal/2-shells/mapwacom.sh -d "Wacom Intuos S Pen stylus" -s "HDMI-0"
+
+# set to center monitor
+alt + w + 2
+	./personal/2-shells/mapwacom.sh -d "Wacom Intuos S Pen stylus" -s "DP-5"
+
+# set to right monitor
+alt + w + 3
+	./personal/2-shells/mapwacom.sh -d "Wacom Intuos S Pen stylus" -s "eDP-1-1"
 
 #
 # change displays style

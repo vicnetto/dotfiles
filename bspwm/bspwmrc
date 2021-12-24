@@ -3,11 +3,11 @@
 sxhkd &
 # picom &
 
-feh --bg-center ~/Personal/4-Images/city_background.png
+feh --bg-center ~/pictures/wallhaven-72rd8e_1920x1080.png
 
-bspc monitor HDMI-1-1 -d 1 2 3
-bspc monitor DP-1-3 -d 4 5 6 7
-bspc monitor eDP-1 -d 8 9 0
+bspc monitor HDMI-0 -d 1 2 3
+bspc monitor DP-5 -d 4 5 6 7
+bspc monitor eDP-1-1 -d 8 9 0
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -24,17 +24,19 @@ bspc rule -a Zathura state=tiled
 bspc rule -a osbuddy state=floating
 bspc rule -a brave state=tiled
 bspc rule -a flameshot state=tiled
+bspc rule -a zoom state=tiled
 bspc rule -a DBeaver desktop='^1' state=tiled
 bspc rule -a Postman desktop='^2'
+bspc rule -a Xournalpp desktop='^3'
 bspc rule -a Chromium desktop='^4'
-bspc rule -a jetbrains-idea desktop='^5'
-bspc rule -a "Microsoft Teams - Preview" desktop='^8'
-bspc rule -a discord desktop='^9'
+bspc rule -a "Microsoft Teams - Preview" desktop='^8' state=tiled
+bspc rule -a discord desktop='^9' state=tiled
 bspc rule -a firefox desktop='^4'
+bspc rule -a Brave-browser desktop='^4'
 
 wmname LG3D &
 
-$HOME/.config/polybar/forest/launch.sh
+$HOME/.config/polybar/blocks/launch.sh
 
 # # Kill all running instances
 # killall -a picom
