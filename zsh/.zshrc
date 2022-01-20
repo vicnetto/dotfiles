@@ -30,5 +30,8 @@ alias ubstatus='sudo systemctl status openvpn-client@ubivis-aws-user'
 alias java8='sudo archlinux-java set java-8-openjdk'
 alias java11='sudo archlinux-java set java-11-openjdk'
 alias java17='sudo archlinux-java set java-17-openjdk'
-alias gittoken='~/personal/2-shells/github.sh'
+alias githubtoken='~/personal/2-shells/github.sh'
+alias cleanstring='~/personal/2-shells/remove-special-characters.sh'
 alias logisim-evolution='sudo archlinux-java set java-17-openjdk && logisim-evolution && sudo archlinux-java set java-11-openjdk'
+
+export NODE_PATH=:/home/vicnetto/npm/lib/node_modules
