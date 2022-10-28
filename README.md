@@ -1,4 +1,4 @@
-# Dot files
+# Dotfiles
 
 **Dot files** are files that begin with a dot. In the Linux universe, those files are hidden by default and are commonly used for configuration files.
 
