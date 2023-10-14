@@ -37,22 +37,23 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: Iosevka
-    style: Light
+    # family: VictorMono Nerd Font
+    family: Iosevka Nerd Font
+    style: Regular
     # family: "Fira Code"
     # family: "Source Code Pro"
     # style: Retina
 
   # The bold font face
   bold:
-    family: Iosevka
+    family: Iosevka Nerd Font
     style: Medium
     # family: "Fira Code"
     # family: "Source Code Pro"
 
   # The italic font face
   italic:
-    family: Iosevka
+    family: Iosevka Nerd Font
     style: "Light Italic"
     # style: "Light Oblique"
     # family: "Fira Code"
@@ -62,7 +63,7 @@ font:
   # Point size of the font
   size: 14.0
 
-background_opacity: 1.0
+# background_opacity: 1.0
  
 # Colors (Blood Moon)
 colors:
