@@ -1,35 +1,157 @@
+[theme]
 theme = "dracula"
-icons = "material-nf"
+[icons]
+icons = "awesome4"
+
+[[block]]
+block = "weather"
+format = " $icon  $weather ($location) $temp ($apparent) "
+[block.service]
+name = "openweathermap"
+api_key = "44946896c925aca82158bb5d557d7a0b"
+city_id = "6454307"
+units = "metric"
+[block.theme_overrides]
+idle_bg = "#67EEBD"
+# idle_bg = "#f1fa8c"
+idle_fg = "#000000"
 
 [[block]]
 block = "disk_space"
 path = "/"
-alias = "/"
 info_type = "available"
-unit = "GB"
-interval = 20
-warning = 20.0
-alert = 10.0
+alert_unit = "GB"
+format = " $icon  $available free "
+format_alt = " $icon  $available / $total "
+[block.theme_overrides]
+# idle_bg = "#FF89B5"
+idle_bg = "#668DE5"
+idle_fg = "#000000"
+
+[[block]]
+block = "temperature"
+format = " $icon  $average " 
+format_alt = " $icon $min min, $max max, $average avg "
+interval = 10
+chip = "*-isa-*"
+[block.theme_overrides]
+# idle_bg = "#71E096"
+idle_bg = "#ff79c6"
+idle_fg = "#000000"
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "{mem_used_percents}"
-format_swap = "{swap_used_percents}"
+format = " $icon  $mem_used_percents.eng(w:1) "
+interval = 30
+warning_mem = 70
+critical_mem = 90
+[block.theme_overrides]
+# idle_bg = "#668DE5"
+idle_bg = "#ffb86c"
+idle_fg = "#000000"
 
 [[block]]
 block = "cpu"
 interval = 1
+format = " $icon  $utilization "
+format_alt = " $icon  $frequency "
+[block.theme_overrides]
+# idle_bg = "#F5A26F"
+idle_bg = "#50fa7b"
+idle_fg = "#000000"
 
 [[block]]
-block = "load"
+block = "nvidia_gpu"
 interval = 1
-format = "{1m}"
+format = " $icon   GTX 1080 $utilization "
+[block.theme_overrides]
+idle_bg = "#ED6D79"
+idle_fg = "#000000"
+
+[[block]]
+block = "custom"
+command = ''' printf "  " && ~/victor/shells/check_vpn.sh /proc/sys/net/ipv4/conf/tun0 '''
+interval = 10
+[block.theme_overrides]
+# idle_bg = "#FFDC89"
+idle_bg = "#6272a4"
+idle_fg = "#000000"
+
+# [[block]]
+# block = "custom"
+# command = ''' printf "索  " && ~/personal/2-shells/check-wifi.sh '''
+# interval = 1
+# [block.theme_overrides]
+# # idle_bg = "#93de64"
+# idle_bg = "#8be9fd"
+# idle_fg = "#000000"
+
+[[block]]
+block = "net"
+format = " $icon  $ssid "
+inactive_format = " $icon  Disconnected "
+missing_format = "  Missing "
+[block.theme_overrides]
+# idle_bg = "#50FA7B"
+idle_bg = "#50fa7b"
+# idle_bg = "#8be9fd"
+idle_fg = "#000000"
+warning_bg = "#FF5555"
+warning_fg = "#000000"
+critical_bg = "#FF5555"
+critical_fg = "#000000"
 
 [[block]]
 block = "sound"
+format = " $icon { $volume |}$output_name "
+[block.mappings]
+"alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo" = "(🎧)"
+"alsa_output.pci-0000_00_1f.3.analog-stereo" = "(🔈)"
+[block.theme_overrides]
+# idle_bg = "#DA97E0"
+idle_bg = "#F1FA8C"
+idle_fg = "#000000"
+warning_fg = "#000000"
 
 [[block]]
 block = "time"
-interval = 5
-format = "%a %d/%m %R"
+interval = 1
+timezone = "America/Sao_Paulo"
+[block.format]
+full = " $icon $timestamp.datetime(f:' (BR) %H:%M', l:fr_BE) "
+[block.theme_overrides]
+idle_bg = "#bd93f9"
+idle_fg = "#000000"
+
+[[block]]
+block = "time"
+interval = 1
+[block.format]
+full = " $icon $timestamp.datetime(f:' (FR) %A %-d/%-m/%-y (%b) %H:%M:%S', l:fr_BE) "
+[block.theme_overrides]
+idle_bg = "#ff79c6"
+idle_fg = "#000000"
+
+[[block]]
+block = "battery"
+format = " $icon  $percentage ($time) "
+full_format = " $icon  " 
+empty_format = " $icon  $percentage ($time) "
+[block.theme_overrides]
+# idle_bg = "#50FA7B"
+idle_bg = "#67EEBD"
+idle_fg = "#000000"
+good_bg = "#F1FA8C"
+good_fg = "#000000"
+warning_bg = "#F1FA8C"
+warning_fg = "#000000"
+critical_bg = "#FF5555"
+critical_fg = "#000000"
+
+[[block]]
+block = "custom"
+command = ''' echo ' EndeavourOS Linux '  '''
+[block.theme_overrides]
+# idle_bg = "#90D4F7"
+idle_bg = "#ffb86c"
+idle_fg = "#000000"
